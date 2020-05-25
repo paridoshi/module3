@@ -1,0 +1,38 @@
+# module3
+<!DOCTYPE html>
+<html ng-app='NarrowItDownApp'>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="newctrl.js"></script>
+    
+    
+  </head>
+  <body>
+    
+
+   	<div ng-controller='NarrowItDownController as menu'>
+	 	<h1>Narrow Down Your Chinese Menu Choice</h1>
+
+
+    	
+      		<input type="text" placeholder="search term" class="form-control" ng-model="menu.searchItem">
+
+    	
+	
+	<button class="btn btn-primary"  ng-click="menu.narrowBtn()" >Narrow It Down For Me! </button>
+
+
+
+<found-items
+ items="menu.foundItems"
+title ="selected Items"
+on-remove ="list.removeItem(index)"></found-items>
+        
+
+	
+
+    </div>
+
+  </body>
+</html>
