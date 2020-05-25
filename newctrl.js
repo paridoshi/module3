@@ -78,8 +78,17 @@ function MenuSearchService($http,$filter) {
 		promise.then(function (response) {
 			console.log(response.data);
 			var foundItems=[];
-			returnObj.foundItems=$filter('filter')(response.data.menu_items, searchItem);
+			//returnObj.foundItems=$filter('filter')(response.data.menu_items, searchItem);
 			//console.log(foundItems);
+
+
+			response.data.menu_items.filter(function (item) {
+          			if (searchItem.length > 0 && item.description.toLowerCase().indexOf(searchItem) > 0) {
+            			foundItems.push(item);
+         			 }
+
+        		});
+			returnObj.foundItems=foundItems;
 			callback();
 			})
 				.catch( function(error) {
