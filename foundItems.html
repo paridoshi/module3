@@ -1,13 +1,14 @@
 <div>
+
 <h3>{{list.myTitle}}</h3>
 
-<table ng-if="(list.items).length>0">
-	<tr>
-		<th>Short Name
+<table  ng-if="(list.items).length>0">
+	<tr style="border:1px solid black">
+		<th>ShortName </th>
 		<th> Name</th>
 		<th>Description</th>
 	</tr>
-	<tr ng-repeat="item in list.items">
+	<tr  ng-repeat="item in list.items">
 		<td>{{item.short_name}}</td>
 		<td>{{item.name}}</td>
 		<td>{{item.description}}</td>
@@ -16,3 +17,10 @@
 </table>
 <div ng-if="list.items.length<=0">Nothing found</div>		
 </div>
+
+<style>
+
+table, th, td {
+  border: 1px solid black;
+}
+</style>
