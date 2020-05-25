@@ -3,11 +3,12 @@
 
 <table ng-if="(list.items).length>0">
 	<tr>
+		<th>Short Name
 		<th> Name</th>
 		<th>Description</th>
 	</tr>
 	<tr ng-repeat="item in list.items">
-		<td>{{item.shortname}}</td>
+		<td>{{item.short_name}}</td>
 		<td>{{item.name}}</td>
 		<td>{{item.description}}</td>
 		<td> <button ng-click="list.removeItem($index)">Don't want this one!"</button></td>
