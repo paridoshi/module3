@@ -1,0 +1,17 @@
+<div>
+<h3>{{list.myTitle}}</h3>
+
+<table ng-if="(list.items).length>0">
+	<tr>
+		<th> Name</th>
+		<th>Description</th>
+	</tr>
+	<tr ng-repeat="item in list.items">
+		<td>{{item.shortname}}</td>
+		<td>{{item.name}}</td>
+		<td>{{item.description}}</td>
+		<td> <button ng-click="list.removeItem($index)">Don't want this one!"</button></td>
+	</tr>
+</table>
+<div ng-if="list.items.length<=0">Nothing found</div>		
+</div>
