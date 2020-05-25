@@ -80,14 +80,15 @@ function MenuSearchService($http,$filter) {
 			var foundItems=[];
 			//returnObj.foundItems=$filter('filter')(response.data.menu_items, searchItem);
 			//console.log(foundItems);
-
-
+			searchItem=searchItem.toLowerCase();
 			response.data.menu_items.filter(function (item) {
-          			if (searchItem.length > 0 && item.description.toLowerCase().indexOf(searchItem) > 0) {
+          			if (searchItem.length > 0 && item.description.toLowerCase().indexOf(searchItem)!=-1) {
             			foundItems.push(item);
          			 }
 
         		});
+
+			
 			returnObj.foundItems=foundItems;
 			callback();
 			})
