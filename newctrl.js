@@ -16,7 +16,7 @@ function FoundItemsDirective() {
       myTitle: '@title',
       onRemove: '&'
     },
-    controller:FoundItemsDirectiveController,
+    controller: NarrowItDownController,
     controllerAs: 'list',
     bindToController: true
   };
@@ -24,7 +24,15 @@ function FoundItemsDirective() {
   return ddo;
 }
 
- 
+/* function FoundItemsDirectiveController() {
+  var list = this;
+
+  list.removeItem = function (itemIndex) {
+   
+     list.items.splice(itemIndex,1);
+      };
+   
+}*/
 
 
 
@@ -44,12 +52,12 @@ function NarrowItDownController(MenuSearchService) {
 	menu.foundItems= menu.returnObj.foundItems;
 	console.log(menu.foundItems);
 	});
-};
+};	
 	menu.removeItem = function (itemIndex) {
    
      	menu.items.splice(itemIndex,1);
-	};
-	
+	//menu.foundItems.splice(itemIndex,1);
+      };
 
 };
 
@@ -77,6 +85,7 @@ function MenuSearchService($http,$filter) {
 			var foundItems=[];
 			//returnObj.foundItems=$filter('filter')(response.data.menu_items, searchItem);
 			//console.log(foundItems);
+
 			searchItem=searchItem.toLowerCase();
 			response.data.menu_items.filter(function (item) {
           			if (searchItem.length > 0 && item.description.toLowerCase().indexOf(searchItem)!=-1) {
@@ -84,8 +93,6 @@ function MenuSearchService($http,$filter) {
          			 }
 
         		});
-
-			
 			returnObj.foundItems=foundItems;
 			callback();
 			})
