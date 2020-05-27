@@ -24,15 +24,7 @@ function FoundItemsDirective() {
   return ddo;
 }
 
- function FoundItemsDirectiveController() {
-  var list = this;
-
-  list.removeItem = function (itemIndex) {
-   
-     list.items.splice(itemIndex,1);
-      };
-   
-}
+ 
 
 
 
@@ -53,6 +45,11 @@ function NarrowItDownController(MenuSearchService) {
 	console.log(menu.foundItems);
 	});
 };
+	menu.removeItem = function (itemIndex) {
+   
+     	menu.items.splice(itemIndex,1);
+	};
+	
 
 };
 
