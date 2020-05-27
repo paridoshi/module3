@@ -106,5 +106,4 @@ function MenuSearchService($http,$filter) {
  	
  	
 		};
-
 })();
