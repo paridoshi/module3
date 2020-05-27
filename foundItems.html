@@ -12,7 +12,7 @@
 		<td>{{item.short_name}}</td>
 		<td>{{item.name}}</td>
 		<td>{{item.description}}</td>
-		<td> <button ng-click="list.removeItem($index)">Don't want this one!"</button></td>
+		<td> <button ng-click="list.removeItem({index: $index});">Don't want this one!"</button></td>
 	</tr>
 </table>
 <div ng-if="list.items.length<=0">Nothing found</div>		
