@@ -29,7 +29,7 @@ function FoundItemsDirective() {
 
   list.removeItem = function (itemIndex) {
    
-     list.items.splice(itemIndex,1);
+     list.items.splice(itemIndex.index,1);
       };
    
 }*/
