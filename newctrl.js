@@ -29,7 +29,7 @@ function FoundItemsDirective() {
 
   list.removeItem = function (itemIndex) {
    
-     list.items.splice(itemIndex.index,1);
+     list.items.splice(itemIndex,1);
       };
    
 }*/
@@ -55,7 +55,7 @@ function NarrowItDownController(MenuSearchService) {
 };	
 	menu.removeItem = function (itemIndex) {
    
-     	menu.items.splice(itemIndex,1);
+     	menu.items.splice(itemIndex.index,1);
 	//menu.foundItems.splice(itemIndex,1);
       };
 
